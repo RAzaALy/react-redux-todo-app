@@ -17,7 +17,6 @@ const EditNote = ({name}) => {
         e.preventDefault()
         dispatch(editAbleTodo(editTodo,editState.id, editState.complitation)) 
         history.push('/')
-        
     }
 
     return (

@@ -5,13 +5,13 @@ import { useDispatch } from 'react-redux'
 import { useHistory } from 'react-router'
 import { deleteTodo, doTodo, editTodo } from '../redux/todolist/todoListAction'
 
-const Todo = ({complitation, payload,id}) => {
+const Todo = ({complitation, payload,id,display}) => {
     const history = useHistory()
     const dispatch = useDispatch()
 
     return (
         <>
-        <div className={`list ${complitation}`} onContextMenu={
+        <div className={`list ${complitation} ${display}`} onContextMenu={
           (e) => {
           e.preventDefault() 
           dispatch(doTodo(id))
@@ -27,7 +27,7 @@ const Todo = ({complitation, payload,id}) => {
                   </div>
                   <div className="icon edited">
                     <MdModeEdit className='edit' onClick={() => { 
-                      dispatch(editTodo({complitation,payload,id,}))
+                      dispatch(editTodo({complitation,payload,id}))
                       history.push('/edit')
                   } } />
 

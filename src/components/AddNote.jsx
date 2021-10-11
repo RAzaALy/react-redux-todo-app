@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import Img from "../logo.png"
 import {GrFormAdd} from "react-icons/gr"
 import { useDispatch } from 'react-redux'
@@ -10,6 +10,8 @@ const AddNote = ({name}) => {
 
     const dispatch = useDispatch()
     const history = useHistory()
+
+    
 
 
     const [todo, setTodo] = useState('')
