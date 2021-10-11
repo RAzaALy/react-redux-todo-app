@@ -26,7 +26,7 @@ const Main = () => {
 
 
   useEffect(() => {
-    dispatch(searchTodos(searchValue))
+    dispatch(searchTodos(searchValue.trim()))
   },[searchValue])
 
   
